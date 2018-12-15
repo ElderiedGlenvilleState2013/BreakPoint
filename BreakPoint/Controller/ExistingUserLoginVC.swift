@@ -1,34 +1,36 @@
 //
-//  LoginVC.swift
+//  ExistingUserLoginVC.swift
 //  BreakPoint
 //
-//  Created by McKinney family  on 7/23/18.
+//  Created by McKinney family  on 8/25/18.
 //  Copyright © 2018 FasTek Technologies. All rights reserved.
 //
 
 import UIKit
 
-class LoginVC: UIViewController {
+class ExistingUserLoginVC: UIViewController {
 
     //outlet
-    @IBOutlet weak var emailFeild: InsertTextField!
-    @IBOutlet weak var passwordField: InsertTextField!
+    @IBOutlet weak var emailFeild: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailFeild.delegate = self
         passwordField.delegate = self
         
     }
-
+    
     
     
     //ibaction
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true , completion: nil)
     }
+    
+    /*
     @IBAction func signInBtnWasPressed(_ sender: Any) {
         if emailFeild.text != nil && passwordField.text != nil {
             AuthService.instance.loginUser(withEmail: emailFeild.text!, andPassword: passwordField.text!) { (success, loginError) in
@@ -57,7 +59,7 @@ class LoginVC: UIViewController {
         }
     }
     
-    
+    */
     
     @IBAction func signInExistingBtnPressed(_ sender: Any) {
         
@@ -97,15 +99,35 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-   
-
-}
-
-
-extension LoginVC: UITextFieldDelegate {
-    
     
     
     
 }
+
+
+extension ExistingUserLoginVC: UITextFieldDelegate {
+    
+    
+    
+    
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+

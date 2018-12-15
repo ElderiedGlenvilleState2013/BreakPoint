@@ -48,7 +48,12 @@ class PostVC: UIViewController {
     
     
     
+    //override functions
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

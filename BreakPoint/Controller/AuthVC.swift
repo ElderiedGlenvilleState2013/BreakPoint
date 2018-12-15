@@ -5,7 +5,7 @@
 //  Created by McKinney family  on 7/23/18.
 //  Copyright © 2018 FasTek Technologies. All rights reserved.
 //
-
+import Firebase
 import UIKit
 
 class AuthVC: UIViewController {
@@ -16,7 +16,12 @@ class AuthVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            dismiss(animated: true, completion: nil)
+        }
+    }
     
     //ibactions
     @IBAction func facebookSignInBtnPressed(_ sender: Any) {
@@ -35,7 +40,10 @@ class AuthVC: UIViewController {
     
     
     
-    
+    @IBAction func LogInExtUserPressed(_ sender: Any) {
+        let logInVC = storyboard?.instantiateViewController(withIdentifier: "ExistingUserLoginVC")
+        present(logInVC!, animated: true, completion: nil)
+    }
     
     
     
